@@ -26,3 +26,4 @@ interface Tmp {
   str: 'lin' | 'bu' | 'du';
 }
 //联合类型
+
