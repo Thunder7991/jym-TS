@@ -50,16 +50,27 @@ if (typeof strOrNumOrBool === 'string') {
   throw new Error(`Unknown input type: ${_exhaustiveCheck}`);
 }
 
-
 function isString(input: unknown): boolean {
-    return typeof input === "string";
+  return typeof input === 'string';
+}
+
+function foo2(input: string | number) {
+  if (isString(input)) {
+    // 类型“string | number”上不存在属性“replace”。
+    // input.replace('linbudu', 'linbudu599');
   }
-  
-  function foo2(input: string | number) {
-    if (isString(input)) {
-      // 类型“string | number”上不存在属性“replace”。
-      (input).replace("linbudu", "linbudu599")
-    }
-    if (typeof input === 'number') { }
-    // ...
+  if (typeof input === 'number') {
   }
+  // ...
+}
+
+type Falsy = false | ''  | null | undefined;
+const isFalsy = (val: unknown): val is Falsy => !val;
+
+
+ type Primitive = string | number | boolean | undefined;
+ const isPrimitive = (val: unknown): val is Primitive => ['string', 'number', 'boolean' , 'undefined'].includes(typeof val);
+ isPrimitive(null)
+
+ 
+
