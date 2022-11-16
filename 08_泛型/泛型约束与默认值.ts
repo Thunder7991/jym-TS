@@ -22,3 +22,6 @@ type Res4 = ResStatus //"success"
 
 // 多泛型关联
 
+let isFn:() => void;
+
+

@@ -40,3 +40,11 @@ type IsEqual<T> = T extends true ? 1 : 2;
 type A = IsEqual<true>; // 1
 type B = IsEqual<false>; // 2
 type C = IsEqual<'linbudu'>; // 2
+
+function handleTyep<T>(arg:T):void {
+  console.log(arg);
+}
+
+const handle = <T extends any>(input: T): T => {}
+
+

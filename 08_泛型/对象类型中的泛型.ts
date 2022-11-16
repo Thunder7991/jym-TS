@@ -27,3 +27,15 @@ interface IPaginationRes<TItem = unknown> {
 function fetchUserProfileList(): Promise<
   IRes<IPaginationRes<IUserProfileRes>>
 > {}
+
+type Conditional<Type, Condition, TruthyResult, FalsyResult> =
+  Type extends Condition ? TruthyResult : FalsyResult;
+
+type ProcessInput<
+  Input,
+  SecondInput extends Input = Input,
+  ThirdInput extends Input = SecondInput,
+> = number;
+
+
+export {}
