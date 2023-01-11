@@ -1,0 +1,1 @@
+type TypeChain = never extends 'linbudu'?1:2
